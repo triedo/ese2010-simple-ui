@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{ifnot events}
+	<p>
+		no events
+	</p>
+#{/ifnot}
+
+<ul>
+	#{list items :events, as:'event'}
+	<li>
+		 ${event.name}
+	</li>
+	#{/list}
+</ul>
+
+<p>
+	<a id = "createEvent" href ="#"> Create a new Event </a>
+</p>
+
+<script type ="text/javascript" charset = "utf-8">
+	//create an event
+	$('#createEvent').click(function(){
+		$.post('@{createEvent()}',{name: prompt('Event name?')})
+	})
+</script>
+

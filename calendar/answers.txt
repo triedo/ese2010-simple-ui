@@ -1,0 +1,21 @@
+1. Explain how a typical HTTP request is processed with the framework (the request lifecycle)
+
+A Play project is split into 3 parts: the model, the view and the controller
+Whenever the framework receive a request, the corresponding action method in the Controller will be invoked. This action method
+reads/updates the model. With the render method (last line in the action method) the controller passes information to update the
+view. After that a HTTP response (with informations about the new view) is send back. 
+   
+
+2. How could you test user interfaces with the testing facilities in play! framework?
+
+With "Selenium" tests. They are written using HTML tables.
+
+
+3.Why does my project not work and what I tried until now 
+
+It seems that I failed to create some test objects and store them;
+-first I tryed to do that like it's written in the exerscise, by a Bootstrap class. I created just one user and add him to 
+the database [ albert = new User("albert123","abcd"); Database.addNewUser("alber123",albert); ]
+
+- because I got NullPointerExeptions I also tried a setupDatabase() method in my Database class. Then I called this method 
+everywhere I need sample data. Like you can see that also failed!
